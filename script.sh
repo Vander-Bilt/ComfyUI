@@ -253,7 +253,8 @@ pip install -r requirements.txt
 cd /kaggle/ComfyUI
 
 cd custom_nodes
-git clone https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite.git
+# git clone https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite.git
+git clone https://github.com/Vander-Bilt/ComfyUI-VideoHelperSuite.git
 cd ComfyUI-VideoHelperSuite
 pip install -r requirements.txt
 cd /kaggle/ComfyUI

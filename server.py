@@ -388,10 +388,20 @@ class PromptServer():
                         image_save_function(image, post, filepath)
                     else:
                         print("image_save_function is None")
-                        # 使用 PIL 打开上传的图片流
-                        img = Image.open(image.file)
-                        # 使用被你的插件修改过的 save 方法进行保存，这将触发加密
-                        img.save(filepath)
+
+                        # if the file is image, then use PIL to save it
+                        if split[1].lower() in ['.jpg', '.jpeg', '.png', '.gif', '.bmp']:
+                            # 使用 PIL 打开上传的图片流
+                            img = Image.open(image.file)
+                            # 使用被你的插件修改过的 save 方法进行保存，这将触发加密
+                            img.save(filepath)
+                        else:
+                            print("not image file")
+                            with open(filepath, "wb") as f:
+                                f.write(image.file.read())
+
+
+                        
 
                 return web.json_response({"name" : filename, "subfolder": subfolder, "type": image_upload_type})
             else:

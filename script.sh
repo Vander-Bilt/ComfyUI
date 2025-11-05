@@ -163,6 +163,15 @@ ln -s /kaggle/input/qwen-image-asianmix-lora/Qwen_Image_AsianMix_Lora.safetensor
 # ln -s /kaggle/input/svdq-int4-r128-qwen-image/svdq-int4_r128-qwen-image.safetensors ./models/diffusion_models/svdq-int4_r128-qwen-image.safetensors
 # ln -s /kaggle/input/svdq-int4-r128-qwen-image-lightningv1-0-4steps/svdq-int4_r128-qwen-image-lightningv1.0-4steps.safetensors ./models/loras
 
+ln -s /kaggle/input/wan2-2-t2v-a14b-highnoise-q4-k-s/Wan2.2-T2V-A14B-HighNoise-Q4_K_S.gguf ./models/diffusion_models/Wan2.2-T2V-A14B-HighNoise-Q4_K_S.gguf
+ln -s /kaggle/input/wan2-2-t2v-a14b-lownoise-q4-0/Wan2.2-T2V-A14B-LowNoise-Q4_0.gguf ./models/diffusion_models/Wan2.2-T2V-A14B-LowNoise-Q4_0.gguf
+ln -s /kaggle/input/wan2-2-i2v-a14b-4steps-lora-high-noise-model/Wan2.2-I2V-A14B-4steps-lora-high_noise_model.safetensors ./models/loras/Wan2.2-I2V-A14B-4steps-lora-high_noise_model.safetensors
+ln -s /kaggle/input/wan2-2-i2v-a14b-4steps-lora-low-noise-model/Wan2.2-I2V-A14B-4steps-lora-low_noise_model.safetensors ./models/loras/Wan2.2-I2V-A14B-4steps-lora-low_noise_model.safetensors
+
+ln -s /kaggle/input/wan2-2-i2v-a14b-highnoise-q4-k-s/Wan2.2-I2V-A14B-HighNoise-Q4_K_S.gguf ./models/diffusion_models/Wan2.2-I2V-A14B-HighNoise-Q4_K_S.gguf
+ln -s /kaggle/input/wan2-2-i2v-a14b-lownoise-q4-0/Wan2.2-I2V-A14B-LowNoise-Q4_0.gguf ./models/diffusion_models/Wan2.2-I2V-A14B-LowNoise-Q4_0.gguf
+    
+ln -s /kaggle/input/umt5-xxl-encoder-q5-k-m/umt5-xxl-encoder-Q5_K_M.gguf ./models/text_encoders/umt5-xxl-encoder-Q5_K_M.gguf
 
 
 # 放大
@@ -257,6 +266,16 @@ cd custom_nodes
 git clone https://github.com/Vander-Bilt/ComfyUI-VideoHelperSuite.git
 cd ComfyUI-VideoHelperSuite
 pip install -r requirements.txt
+cd /kaggle/ComfyUI
+
+cd custom_nodes
+git clone https://github.com/SeanScripts/ComfyUI-Unload-Model.git
+cd /kaggle/ComfyUI
+
+cd custom_nodes
+git clone https://github.com/Fannovel16/ComfyUI-Frame-Interpolation.git
+cd ComfyUI-Frame-Interpolation
+python install.py
 cd /kaggle/ComfyUI
 
 # cd custom_nodes

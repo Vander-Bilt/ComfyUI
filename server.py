@@ -517,7 +517,7 @@ class PromptServer():
 
                     print(f"*** channel: {channel}")
                     
-                    # 使用PIL的is_animated属性来判断是否为视频/动画文件
+                    # 使用PIL的is_animated属性来判断是否为视频/动画文件，或者
                     def is_video_or_animated_file(file_path):
                         """使用PIL判断文件是否为视频或动画文件"""
                         try:
@@ -547,9 +547,10 @@ class PromptServer():
                             file_ext = os.path.splitext(file_path)[1].lower()
                             return file_ext in video_extensions
                     
-                    # 检查是否为视频/动画文件
-                    if is_video_or_animated_file(file):
-                        # 对于视频/动画文件，直接返回文件内容，不进行图像处理
+                    # 检查是否为非图片：视频/动画文件, 或者音频文件。
+                    _, ext = os.path.splitext(filename)
+                    if ext.lower() not in ['.jpg', '.jpeg', '.png', '.gif', '.bmp']:
+                    # if is_video_or_animated_file(file):
                         content_type = mimetypes.guess_type(filename)[0] or 'application/octet-stream'
                         
                         # 对于安全考虑，强制某些MIME类型下载而不是显示

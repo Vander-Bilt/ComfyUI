@@ -173,6 +173,11 @@ ln -s /kaggle/input/wan2-2-i2v-a14b-lownoise-q4-0/Wan2.2-I2V-A14B-LowNoise-Q4_0.
     
 ln -s /kaggle/input/umt5-xxl-encoder-q5-k-m/umt5-xxl-encoder-Q5_K_M.gguf ./models/text_encoders/umt5-xxl-encoder-Q5_K_M.gguf
 
+ln -s /kaggle/input/wan2-2-s2v-14b-q4-0/Wan2.2-S2V-14B-Q4_0.gguf ./models/diffusion_models/Wan2.2-S2V-14B-Q4_0.gguf
+ln -s /kaggle/input/wan2-2-t2v-lightx2v-4steps-lora-v1-1-high-noise/wan2.2_t2v_lightx2v_4steps_lora_v1.1_high_noise.safetensors ./models/loras/wan2.2_t2v_lightx2v_4steps_lora_v1.1_high_noise.safetensors
+ln -s /kaggle/input/wav2vec2-large-english-fp16/wav2vec2_large_english_fp16.safetensors ./models/audio_encoders/wav2vec2_large_english_fp16.safetensors
+ln -s /kaggle/input/wav2vec2-large-chinese-zh-cn/wav2vec2-large-chinese-zh-cn.safetensors ./models/audio_encoders/wav2vec2-large-chinese-zh-cn.safetensors
+
 
 # 放大
 # wget -c https://huggingface.co/schwgHao/RealESRGAN_x4plus/resolve/main/RealESRGAN_x4plus.pth -P ./models/upscale_models

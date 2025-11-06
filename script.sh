@@ -4,8 +4,8 @@
 ln -s /kaggle/input/cosmos-predict2-2b-video2world-480p-16fps/cosmos_predict2_2B_video2world_480p_16fps.safetensors ./models/diffusion_models/cosmos_predict2_2B_video2world_480p_16fps.safetensors
 
 # my lora
-git clone https://huggingface.co/datasets/Heng365/loras /kaggle/working/fromhf
-mv /kaggle/working/fromhf/* ./models/loras
+# git clone https://huggingface.co/datasets/Heng365/loras /kaggle/working/fromhf
+# mv /kaggle/working/fromhf/* ./models/loras
 
 # sd lora ？
 ln -s /kaggle/input/moxinv1/MoXinV1.safetensors ./models/loras/MoXinV1.safetensors
@@ -44,8 +44,8 @@ ln -s /kaggle/input/flux1-dev-kontext-fp8-scaled/flux1-dev-kontext_fp8_scaled.sa
 
 ln -s /kaggle/input/flux1-fill-dev/flux1-fill-dev.safetensors ./models/diffusion_models/flux1-fill-dev.safetensors
 
-wget https://huggingface.co/zer0int/CLIP-GmP-ViT-L-14/resolve/main/ViT-L-14-TEXT-detail-improved-hiT-GmP-TE-only-HF.safetensors -P ./models/text_encoders
-wget https://huggingface.co/Madespace/clip/resolve/main/google_t5-v1_1-xxl_encoderonly-fp8_e4m3fn.safetensors -P ./models/text_encoders
+# wget https://huggingface.co/zer0int/CLIP-GmP-ViT-L-14/resolve/main/ViT-L-14-TEXT-detail-improved-hiT-GmP-TE-only-HF.safetensors -P ./models/text_encoders
+# wget https://huggingface.co/Madespace/clip/resolve/main/google_t5-v1_1-xxl_encoderonly-fp8_e4m3fn.safetensors -P ./models/text_encoders
 
 
 # Qwen Image
@@ -90,41 +90,39 @@ mkdir -p ./models/instantid
 # wget -c https://huggingface.co/InstantX/InstantID/resolve/main/ip-adapter.bin -P ./models/instantid
 ln -s /kaggle/input/ip-adapter/ip-adapter.bin ./models/instantid/ip-adapter.bin
 
-wget -c https://huggingface.co/MonsterMMORPG/tools/resolve/main/antelopev2.zip -P ./models
-mkdir -p ./models/insightface/models
-unzip ./models/antelopev2.zip -d ./models/insightface/models
+# wget -c https://huggingface.co/MonsterMMORPG/tools/resolve/main/antelopev2.zip -P ./models
+# mkdir -p ./models/insightface/models
+# unzip ./models/antelopev2.zip -d ./models/insightface/models
 
 # instantid
 #  -O overrides -P if both are specified.
 # wget -c https://huggingface.co/InstantX/InstantID/resolve/main/ControlNetModel/diffusion_pytorch_model.safetensors -O ./models/controlnet/instantid-controlnet.safetensors
 ln -s /kaggle/input/diffusion-pytorch-model/diffusion_pytorch_model.safetensors ./models/controlnet/instantid-controlnet.safetensors
-wget -c https://huggingface.co/InstantX/InstantID/resolve/main/ControlNetModel/config.json -P ./models/controlnet
+# wget -c https://huggingface.co/InstantX/InstantID/resolve/main/ControlNetModel/config.json -P ./models/controlnet
 
 # wget -c https://huggingface.co/lllyasviel/sd_control_collection/resolve/d1b278d0d1103a3a7c4f7c2c327d236b082a75b1/thibaud_xl_openpose.safetensors -P ./models/controlnet
 
 # When using ultralytics models, save them separately in models/ultralytics/bbox and models/ultralytics/segm depending on the type of model.
-mkdir -p ./models/ultralytics/bbox
-wget -c https://huggingface.co/Tenofas/ComfyUI/resolve/d79945fb5c16e8aef8a1eb3ba1788d72152c6d96/ultralytics/bbox/Eyes.pt -P ./models/ultralytics/bbox
+# mkdir -p ./models/ultralytics/bbox
+# wget -c https://huggingface.co/Tenofas/ComfyUI/resolve/d79945fb5c16e8aef8a1eb3ba1788d72152c6d96/ultralytics/bbox/Eyes.pt -P ./models/ultralytics/bbox
 
-wget -c https://huggingface.co/YouLiXiya/YL-SAM/resolve/main/sam_vit_b_01ec64.pth -P  ./models/sams
-wget -c https://huggingface.co/datasets/Gourieff/ReActor/resolve/main/models/detection/bbox/face_yolov8m.pt -P ./models/ultralytics/bbox
+# wget -c https://huggingface.co/YouLiXiya/YL-SAM/resolve/main/sam_vit_b_01ec64.pth -P  ./models/sams
+# wget -c https://huggingface.co/datasets/Gourieff/ReActor/resolve/main/models/detection/bbox/face_yolov8m.pt -P ./models/ultralytics/bbox
 
 
 
-# ComfyUI_IPAdapter_plus models
-mkdir -p ./models/ipadapter
-wget -c https://huggingface.co/h94/IP-Adapter/resolve/main/models/image_encoder/model.safetensors -O ./models/clip_vision/CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors
-# SDXL ipadapter model
-wget -c https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/ip-adapter-plus-face_sdxl_vit-h.safetensors -P ./models/ipadapter
-wget -c https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/ip-adapter-plus_sdxl_vit-h.safetensors -P ./models/ipadapter
-wget -c https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/ip-adapter_sdxl_vit-h.safetensors -P ./models/ipadapter
+# # ComfyUI_IPAdapter_plus models
+# mkdir -p ./models/ipadapter
+# wget -c https://huggingface.co/h94/IP-Adapter/resolve/main/models/image_encoder/model.safetensors -O ./models/clip_vision/CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors
+# # SDXL ipadapter model
+# wget -c https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/ip-adapter-plus-face_sdxl_vit-h.safetensors -P ./models/ipadapter
+# wget -c https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/ip-adapter-plus_sdxl_vit-h.safetensors -P ./models/ipadapter
+# wget -c https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/ip-adapter_sdxl_vit-h.safetensors -P ./models/ipadapter
 
-# pulid model
-mkdir -p ./models/pulid/
-wget -c https://huggingface.co/guozinan/PuLID/resolve/main/pulid_flux_v0.9.0.safetensors -P ./models/pulid/
 
-# testing it
-# wget -c https://huggingface.co/JackAILab/ConsistentID/resolve/main/ConsistentID_SDXL-v1.bin -P ./models/unet
+
+
+
 
 # 质量还不错，速度有点慢
 # wget -c https://huggingface.co/city96/t5-v1_1-xxl-encoder-gguf/resolve/main/t5-v1_1-xxl-encoder-Q8_0.gguf -P ./models/text_encoders
@@ -178,6 +176,7 @@ ln -s /kaggle/input/wan2-2-t2v-lightx2v-4steps-lora-v1-1-high-noise/wan2.2_t2v_l
 ln -s /kaggle/input/wav2vec2-large-english-fp16/wav2vec2_large_english_fp16.safetensors ./models/audio_encoders/wav2vec2_large_english_fp16.safetensors
 ln -s /kaggle/input/wav2vec2-large-chinese-zh-cn/wav2vec2-large-chinese-zh-cn.safetensors ./models/audio_encoders/wav2vec2-large-chinese-zh-cn.safetensors
 
+wget -c https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/Lightx2v/lightx2v_I2V_14B_480p_cfg_step_distill_rank32_bf16.safetensors -P ./models/loras
 
 # 放大
 # wget -c https://huggingface.co/schwgHao/RealESRGAN_x4plus/resolve/main/RealESRGAN_x4plus.pth -P ./models/upscale_models
@@ -190,22 +189,24 @@ ln -s /kaggle/input/wav2vec2-large-chinese-zh-cn/wav2vec2-large-chinese-zh-cn.sa
 ln -s /kaggle/input/clip-vision-h/clip_vision_h.safetensors ./models/clip_vision/clip_vision_h.safetensors
 ln -s /kaggle/input/clip-vit-large-patch14/clip-vit-large-patch14.safetensors ./models/clip_vision/clip-vit-large-patch14.safetensors
 
-mkdir -p ./models/xlabs/ipadapters
-ln -s /kaggle/input/flux-ip-adapter-v2/flux-ip-adapter-v2.safetensors ./models/xlabs/ipadapters/flux-ip-adapter-v2.safetensors
+# mkdir -p ./models/xlabs/ipadapters
+# ln -s /kaggle/input/flux-ip-adapter-v2/flux-ip-adapter-v2.safetensors ./models/xlabs/ipadapters/flux-ip-adapter-v2.safetensors
 
-
-wget -c https://huggingface.co/thedeoxen/refcontrol-flux-kontext-reference-pose-lora/resolve/main/refcontrol_pose.safetensors -P ./models/loras
+# wget -c https://huggingface.co/thedeoxen/refcontrol-flux-kontext-reference-pose-lora/resolve/main/refcontrol_pose.safetensors -P ./models/loras
 
 
 
 # Flux ControlNet
 # wget -c https://huggingface.co/Shakker-Labs/FLUX.1-dev-ControlNet-Union-Pro-2.0/resolve/main/diffusion_pytorch_model.safetensors -O ./models/controlnet/flux.1-dev-controlnet-union-pro-2.0.safetensors
 # Flux ControlNet fp8
-wget -c https://huggingface.co/ABDALLALSWAITI/FLUX.1-dev-ControlNet-Union-Pro-2.0-fp8/resolve/main/diffusion_pytorch_model.safetensors -O ./models/controlnet/flux.1-dev-controlnet-union-pro-2.0-fp8.safetensors
+# wget -c https://huggingface.co/ABDALLALSWAITI/FLUX.1-dev-ControlNet-Union-Pro-2.0-fp8/resolve/main/diffusion_pytorch_model.safetensors -O ./models/controlnet/flux.1-dev-controlnet-union-pro-2.0-fp8.safetensors
 
 
 # Qwen ControlNet
 wget -c https://huggingface.co/Comfy-Org/Qwen-Image-DiffSynth-ControlNets/resolve/main/split_files/loras/qwen_image_union_diffsynth_lora.safetensors -P ./models/loras
+
+
+
 # ----------------   安装自定义插件节点  ----------------
 
 # 1 ComfyUI-Manager
